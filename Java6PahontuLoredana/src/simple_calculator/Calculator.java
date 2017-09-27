@@ -15,9 +15,6 @@ import java.util.Scanner;
  */
 public class Calculator {
           
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         
         System.out.println( "Please introduce your first number:");
@@ -26,18 +23,18 @@ public class Calculator {
         double result = 0;
                
         try (Scanner scanner = new Scanner(System.in)){
-         
+         // Variable that will receive first user input number
          double x = scanner.nextDouble();
          
          System.out.println( "Please introduce operator(+/-/*//):");
-         
+         // Variable that will receive user input operator
          String operator = scanner.next();
          
          System.out.println( "Please introduce second number:");
-        
+        // Variable that will receive second user input number
          double y = scanner.nextDouble();
          
-          // This is a switch that will evalute the input operator.
+         // This is a switch that will evalute the input operator.
          switch (operator){
              
              case "+":
@@ -52,8 +49,9 @@ public class Calculator {
              case "/":
                  result = x/y;
                  break;
+             // If user introduces something else instead of the 4 operators, error message appears
              default: 
-                 System.out.println("Sorry, you introduced wrong data. I quit :)");
+                 System.out.println("Sorry, you introduced wrong operator. I quit :)");
                  System.exit(0);
          }
          System.out.println( "Please introduce =:");
@@ -66,14 +64,14 @@ public class Calculator {
          
         } 
          else
-             
-         {System.out.println("Sorry, you introduced wrong data. I quit :)");
+          // If user introduces something else instead of =, error message appears   
+         {System.out.println("Sorry, that wasn't =. I quit :)");
          System.exit(0);
          }
         
         }
                 
-        // This is a generic Exception handler that will point use of invalid characters instead of numbers.
+        // If user introduces characters instead of numbers, error message appears
         catch (Exception e) {
             System.out.println("Sorry, you introduced wrong data. I quit :)");
       }
