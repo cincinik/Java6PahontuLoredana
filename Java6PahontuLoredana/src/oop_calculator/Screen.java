@@ -4,42 +4,39 @@
  */ 
 package oop_calculator;
 
-/**
- * Class Screen displays the input numbers and results.
+/**Class Screen - screen of calculator. Displays messages and values.
  * @author Lori
  * @version 1.0 September 2017
  */
 public class Screen {
-
-    Double screenMemory;
-    Button myButton = new Button();
-   
-    // Sets initial value to 0.
+    
+    private int screenMemory = 0;
+        
+    // Displays 0 on screen
     public void clear(){
-         System.out.println("Display: 0");
-         screenMemory = 0.0;
-    }
-    // Displays first user input number.
-    public void displayFirstNumber(){
-        System.out.print("Introduce first number and press Enter: ");
-        screenMemory = myButton.firstNumber();
+        screenMemory = 0;
         System.out.println("Display: " + screenMemory);
     }
-    // Displays user input operator
-    public void displayOperator(){
-        System.out.print("Introduce operand and press Enter: ");
-        System.out.println("Display: " + myButton.operator());
+
+    //Displays current values on screen.
+    public void display(int valueToDisplay){
+        System.out.println(valueToDisplay);
+        screenMemory = valueToDisplay;
     }
-    // Displays second user input number.
-    public void displaySecondNumber(){
-        System.out.print("Introduce second number and press Enter: ");
-        screenMemory = myButton.secondNumber();
-        System.out.println("Display: " + screenMemory);
+    
+    // Get value of screen memory.
+    public int getScreenMemory() {
+        return screenMemory;
     }
-    // Displays result of computation.   
-    public void displayResult(){
-        System.out.print("Introduce = and press Enter to see result: ");
-        screenMemory = myButton.equal();
-        System.out.println("Display: " + screenMemory);
+
+    // Set value of screen memory.
+    public void setScreenMemory(int screenMemory) {
+        this.screenMemory = screenMemory;
     }
+
+    // Displays messages on screen.
+    public void displayMessage(String message){
+        System.out.println(message);
+    }
+    
 }
