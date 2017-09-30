@@ -63,7 +63,6 @@ public class Calculator {
         String readNumber = newScanner.nextLine();
         Double newNumber = Double.valueOf(readNumber);
         myScreen.displayMessage("Display: " + newNumber);
-        
         if(procesor.getFirstNumber() == null)
             procesor.setFirstNumber(newNumber);
         else
@@ -73,9 +72,7 @@ public class Calculator {
     // Reads and stores operator input. 
     public void insertOperator(){
         Scanner newScanner = new Scanner(System.in);
-        
-         myScreen.displayMessage("Please introduce operator and press enter: ");
-        
+        myScreen.displayMessage("Please introduce operator and press enter: ");
         String readOperator = newScanner.nextLine();
         Character newOperator = readOperator.charAt(0);
         myScreen.displayMessage("Display: " + readOperator);
