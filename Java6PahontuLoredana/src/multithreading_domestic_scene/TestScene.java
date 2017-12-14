@@ -15,11 +15,15 @@ public class TestScene {
         
         // Create a Cigar instance 
         Cigar cigar = new Cigar();
+        // Set maximum priority to increase chances of executing first or second
+        cigar.setPriority(10);
         // Starting cigar's thread creates new method stack
         new Thread(cigar).start();
         
          // Create a VacuumCleaner instance 
         VacuumCleaner vacuum = new VacuumCleaner();
+        // Set maximum priority to increase chances of executing first or second
+        vacuum.setPriority(10);
          // Starting vacuums's thread, creates new method stack
         new Thread(vacuum).start();
         

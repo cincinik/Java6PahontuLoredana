@@ -13,6 +13,6 @@ public class Cigar extends Thread {
     /**@Override method inherited from superclass Thread that implements Runnable  */
     @Override
     public void run(){
-       System.out.println("A cigar is burning...");
+       System.out.println("A forgotten cigar is burning...");
     }
 }
