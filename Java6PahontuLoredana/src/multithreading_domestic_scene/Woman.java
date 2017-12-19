@@ -11,11 +11,13 @@ package multithreading_domestic_scene;
 
 public class Woman extends Thread {
     // an instance of TV
-    final TV tv;
+    private final TV tv;
+    private final Cigar c;
     
     // passing a TV to the constructor
-    public Woman(TV existingTV) {
+    public Woman(TV existingTV, Cigar cigar) {
         tv = existingTV;
+        c = cigar;
     }
     
     /** Method saying the lady is sleeping */

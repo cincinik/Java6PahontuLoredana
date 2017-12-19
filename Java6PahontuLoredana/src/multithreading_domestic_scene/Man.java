@@ -12,11 +12,18 @@ package multithreading_domestic_scene;
  */
 public class Man extends Thread {
     // an instance of TV
-    final TV tv;
+    private final TV tv;
+    // an instance of Vacuumcleaner
+    private final VacuumCleaner vc;
     
-    // passing a TV to the constructor
-    public Man(TV existingTV) {
+    // passing a TV and a VacuumCleaner to the constructor
+    public Man(TV existingTV, VacuumCleaner hisVacuum) {
         tv = existingTV;
+        vc = hisVacuum;
+    }
+    
+    private void isCleaning(VacuumCleaner vc){
+        vc.setPowerButton(true);
     }
     
     /** Method for Man to announce the woman that the show has started */    
@@ -28,7 +35,8 @@ public class Man extends Thread {
     @Override
     public void run(){
         try{
-            // Put thread to sleep for 1 second, to be sure that woman's thread runs first
+            isCleaning(vc);
+            // Put thread to sleep for 1 second, to be sure that woman's thread runs next
             Thread.sleep(1000);
             // synchronizing on the tv object
             synchronized(tv){
@@ -41,7 +49,7 @@ public class Man extends Thread {
         } catch(InterruptedException e){
                 e.getStackTrace();}
         try {
-            // Pausing the man's thread for 2 seconds, so the woman's thread continue
+            // Pausing the man's thread for 1 second, so the woman's thread continue
             Thread.sleep(1000);
         } catch (InterruptedException ex) {
             ex.getStackTrace(); }
