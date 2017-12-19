@@ -6,7 +6,7 @@ package multithreading_domestic_scene;
 
 
 
-/**Class Man: notifies wife when her soap opera is starting on TV. 
+/**Class Man: is vacuuming and notifies wife when her soap opera is starting on TV. 
  * @author Lori
  * @version 1.0 December 2017
  */
@@ -54,8 +54,8 @@ public class Man extends Thread {
         } catch (InterruptedException ex) {
             ex.getStackTrace(); }
        
-        // Announcing the women that her show has tarted
-        // Using a synchronized block, gives more chances that th threads will execute in the desired order
+        // Announcing the women that her show has started
+        // Using a synchronized block, gives more chances that the threads will execute in the desired order
         synchronized(this){
             wakeHerUp();
         }

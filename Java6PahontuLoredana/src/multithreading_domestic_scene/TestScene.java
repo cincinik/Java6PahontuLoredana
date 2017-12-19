@@ -15,7 +15,7 @@ public class TestScene {
         
         // Create a Cigar instance 
         Cigar cigar = new Cigar();
-         // Create a VacuumCleaner instance 
+        // Create a VacuumCleaner instance 
         VacuumCleaner vacuum = new VacuumCleaner();
         // Create a TV instance 
         TV tv = new TV();
@@ -42,8 +42,5 @@ public class TestScene {
         woman.setPriority(8);               
         // Starting woman's thread, creates new method stack
         new Thread(woman).start();
-        
-        
-        
     }  
 }

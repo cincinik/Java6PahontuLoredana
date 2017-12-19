@@ -10,9 +10,14 @@ package multithreading_domestic_scene;
  */
 public class Cigar extends Thread {
     
+    
+    private void isBurning(){
+        System.out.println("A forgotten cigar is burning...");
+    }
+    
     /**@Override method inherited from superclass Thread that implements Runnable  */
     @Override
     public void run(){
-       System.out.println("A forgotten cigar is burning...");
+       isBurning();
     }
 }
