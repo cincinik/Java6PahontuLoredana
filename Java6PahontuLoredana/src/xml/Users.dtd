@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Users DTD 
+-->
+
+<!--Define Users vocabulary/syntax.   
+Table with many users records.
+One user has one cnp, name, password-->
+<!ELEMENT users (user)*>
+<!ELEMENT user (cnp, name, password)>
+<!ELEMENT cnp (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
